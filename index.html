@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Arya Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="transition"></div>
+
+<div class="stars"></div>
+
+
+<div class="container">
+  
+<audio id="bgMusic" loop>
+    <source src="music/music.mp3" type="audio/mpeg">
+</audio>
+
+<img src="images/balloon1.png" class="balloon">
+<img src="images/balloon2.png" class="balloon">
+<img src="images/balloon3.png" class="balloon">
+<img src="images/balloon4.png" class="balloon">
+<img src="images/balloon5.png" class="balloon">
+  
+<div id="progressText">Page 1 / 20</div>
+
+<div class="page active" id="page1">
+<h1>Hey Arya! 👋</h1>
+<h2>It's 3 October...</h2>
+<p>Something for you. ✨</p>
+
+<button id="next1">Let's Begin →</button>
+</div>
+
+<div class="page" id="page2">
+<h1>Are you ready? 👀</h1>
+
+<button id="noBtn">NO</button>
+
+<button id="yesBtn">YES</button>
+
+<p id="dialogue"></p>
+
+</div>
+
+<div class="page" id="page3">
+
+<h1>Wait 😅 ..</h1>
+
+<p>Would you like to See Previous Year 2025?</p>
+
+<button id="yes2025">YES</button>
+
+<button id="no2025">NO</button>
+
+<p id="dialogue2025"></p>
+
+</div>
+
+<div class="page" id="page4">
+
+<h1>📱</h1>
+
+<img id="replyImage" src="images/reply.jpg" width="250">
+
+<p id="typingText"></p>
+
+<button id="continue4">Continue ➜</button>
+
+</div>
+
+<div class="page" id="page5">
+
+<h1>😅</h1>
+
+<p id="page5Text">
+About That ❕...<br><br>
+
+The photos Was available on Snapchat .<br><br>
+
+So... sorry about that. 😌
+</p>
+
+<button id="continue5">Continue ➜</button>
+
+</div>
+
+<div class="page" id="page6">
+
+<h1>🏐</h1>
+
+<p>
+Do You agree ? 🤔...
+<br><br>
+Arya plays Volleyball really well.
+<br><br>
+What do you think?
+</p>
+
+<button id="yes6">YES</button>
+
+<button id="no6">NO</button>
+
+<p id="dialogue6"></p>
+
+</div>
+
+<div class="page" id="page7">
+
+<h1>🏐Your Statics</h1>
+
+<p>Serving</p>
+<progress id="serveBar" value="0" max="100"></progress>
+
+<p>Smash</p>
+<progress id="smashBar" value="0" max="100"></progress>
+
+<p>Defense</p>
+<progress id="defenseBar" value="0" max="100"></progress>
+
+<p>Energy</p>
+<progress id="energyBar" value="0" max="100"></progress>
+
+<p>Coolness</p>
+<progress id="coolBar" value="0" max="100"></progress>
+<p> 🧿✨</p>
+
+<button id="next7">Next ➜</button>
+
+</div>
+
+<div class="page" id="page8">
+
+<h1>🏐 Volleyball Memories</h1>
+
+<img id="volley1" src="images/volley1.jpg" class="galleryImg">
+<img id="volley2" src="images/volley2.jpg" class="galleryImg">
+<img id="volley3" src="images/volley3.jpg" class="galleryImg">
+
+<p>Some Unforgettable. ✨</p>
+
+<button id="next8">Next ➜</button>
+
+</div>
+
+<div class="page" id="page9">
+
+<h1>🎥 Samrath To Power Sports Academy Behind Journey ❕</h1>
+
+<video id="volleyVideo" width="280" controls>
+  <source src="videos/volleyball.mp4" type="video/mp4">
+</video>
+
+<p>🏐Oo bii mast 😳😅.</p>
+
+<button id="next9">Next ➜</button>
+
+</div>
+
+<div class="page" id="page10">
+
+<h1>👀</h1>
+
+<p>
+😄<br><br>
+
+Today is special for you...<br><br>
+
+But according to nature,<br><br>
+
+only one thing is truly special.<br><br>
+
+What do you think it is? 
+</p>
+
+<button id="show10">✨ Show Me ✨</button>
+
+</div>
+
+<div class="page" id="page11">
+
+<h1>😊</h1>
+
+<img id="smilePhoto" src="images/smile.jpg" class="photoPage">
+
+<p>
+<b>Your smile.</b>
+<br><br>
+Keep Smiling 😁. ✨
+</p>
+
+<button id="next11">Next ➜</button>
+
+</div>
+
+<div class="page" id="page12">
+
+<h1>🌸</h1>
+
+<img src="images/flower.jpg" class="photoPage">
+
+<p>
+Flowers are very beautiful...
+<br><br>
+But Today They Have Toughest Competition. 😄
+</p>
+
+<button id="next12">Next ➜</button>
+
+</div>
+
+<div class="page" id="page13">
+
+<h1>🤍</h1>
+
+<img src="images/papa.jpg" class="photoPage">
+
+<p>
+This is one of the best pictures ever And Always 🧿💫
+</p>
+
+<button id="next13">Next ➜</button>
+
+</div>
+
+<div class="page" id="page14">
+
+<h1>🌊</h1>
+
+<img src="images/ganga.jpg" class="photoPage">
+
+<p>
+🌊<br><br>
+
+ 🌊 Ganga is full of peace...
+But somehow, this picture managed to capture little more than that, And A new Year B-Day a ✨
+</p>
+
+<button id="next14">Next ➜</button>
+
+</div>
+
+<div class="page" id="page15">
+
+<h1>🌈</h1>
+
+<img src="images/holi.jpg" class="photoPage">
+
+<p>
+🌈<br><br>
+
+🌈 Holi is full of colours...
+But somehow, they found the perfect place to be today. 😄✨
+<br><br>
+
+
+</p>
+
+<button id="next15">Next ➜</button>
+
+</div>
+
+<div class="page" id="page16">
+
+<h1>📸</h1>
+
+<img src="images/photo6.jpg" class="photoPage">
+
+<p>
+📸<br><br>
+
+Camera did its job...
+<br><br>
+📸 A camera only captures moments...
+But somehow, this picture captured  Joy And always keep capturing in the future ✨
+
+</p>
+
+<button id="next16">Next ➜</button>
+
+</div>
+
+<div class="page" id="page17">
+
+<h1>🎵</h1>
+
+<img src="images/song.jpg" class="photoPage">
+
+<p>
+
+😅
+
+<br><br>
+
+Yach Website Madhe Takayla
+Song Wicharlo Hoto.😅
+
+</p>
+
+<button id="next17">Continue ➜</button>
+
+</div>
+
+<div class="page" id="page18">
+
+<h1>⏳</h1>
+
+<h2>Preparing Final Surprise...</h2>
+
+<p id="loadingText">0%</p>
+
+<div class="loadingBar">
+<div id="loadingFill"></div>
+</div>
+
+</div>
+
+<div class="page" id="page19">
+
+<h1>🎁</h1>
+
+<p id="finalTyping">
+Almost...😄
+<br><br>
+Just one last click.
+</p>
+
+<button id="continue18">✨ Continue ✨</button>
+
+</div>
+
+<div class="page" id="page19">
+
+<h1>🎉 Happy Birthday Arya! 🎂</h1>
+<p id="endingMessage">
+✨ Hope this little surprise made you smile. 🌸
+</p>
+
+<p id="madeBy">
+Made specially for your birthday. 💙
+</p>
+<p>
+Wishing you a year full of happiness,<br>
+good health,<br>
+success,<br>
+beautiful moments,<br>
+and countless reasons to smile. ✨
+</p>
+
+<button id="replayBtn">🔄 Replay Journey</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
