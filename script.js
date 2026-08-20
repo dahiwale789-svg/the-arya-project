@@ -191,7 +191,12 @@ i++;
 
 if(i>=message.length){
 
+if(i>=message.length){
+
 clearInterval(timer);
+continue4.style.display = "inline-block";
+
+}
 
 }
 
