@@ -119,7 +119,7 @@ noBtn.style.top = randomTop + "px";
 dialogue.innerHTML="🤔 Umm... No Kaun Kart Ahe? Click No";
 }
 else if(noClickCount==2){
-dialogue.innerHTML="😆 Double No Click Keli!Reclick No😅";
+dialogue.innerHTML="😆 Double No Click Keli! Reclick No😅";
 }
 else{
 dialogue.innerHTML=" Yes La Click Kar N Pagal 😂!";
