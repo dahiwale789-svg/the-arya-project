@@ -95,9 +95,6 @@ next1.addEventListener("click", () => {
   showPage(2);
   updateProgress(2);
 });
-  showPage(2);
-  updateProgress(2);
-});
 
 noBtn.addEventListener("click", () => {
 noClickCount++;
