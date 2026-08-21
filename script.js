@@ -90,18 +90,10 @@ const replayBtn = document.getElementById("replayBtn");
 let noClickCount = 0;
 
 next1.addEventListener("click", () => {
-
-  bgMusic.currentTime = 0;
-  bgMusic.volume = 1;
-
-  bgMusic.play()
-    .then(() => {
-      alert("MUSIC STARTED ✅");
-    })
-    .catch((error) => {
-      alert("MUSIC ERROR ❌\n" + error.name + "\n" + error.message);
-    });
-
+  transitionEffect();
+  bgMusic.play();
+  showPage(2);
+  updateProgress(2);
 });
   showPage(2);
   updateProgress(2);
