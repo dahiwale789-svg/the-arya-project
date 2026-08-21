@@ -89,12 +89,18 @@ const replayBtn = document.getElementById("replayBtn");
 
 let noClickCount = 0;
 
-next1.addEventListener("click", () => {
+next1.addEventListener("click", async () => {
   transitionEffect();
-  bgMusic.play();
   showPage(2);
   updateProgress(2);
+
+  try {
+    await bgMusic.play();
+  } catch (error) {
+    console.log("Music Error:", error);
+  }
 });
+
 
 noBtn.addEventListener("click", () => {
 noClickCount++;
