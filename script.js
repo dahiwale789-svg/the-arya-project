@@ -116,7 +116,7 @@ noBtn.style.left = randomLeft + "px";
 noBtn.style.top = randomTop + "px";
 
   if(noClickCount==1){
-dialogue.innerHTML="😏 Itna bhi easy nahi hai...";
+dialogue.innerHTML="😏 Itna bhi easy nahi hai...Re-Try";
 }
 else if(noClickCount==2){
 dialogue.innerHTML="😆 Double No Keli, 🤨 Ye No button aapka favourite hai kya?";
