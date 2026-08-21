@@ -91,7 +91,9 @@ let noClickCount = 0;
 
 next1.addEventListener("click", () => {
   transitionEffect();
-  bgMusic.play();
+  bgMusic.play().catch(error => {
+  alert("Music error: " + error);
+});
   showPage(2);
   updateProgress(2);
 });
