@@ -216,9 +216,36 @@ But Today They Have Toughest Competition. 😄
 
 <img src="papa.jpg" class="photoPage">
 
-<p>
+<p class="dadQuote">
 💫“There's Nothing More Precious Than A Father Holding Your Hand 🕊️. You're The Happiness Of Your Father, So Here's A Shayri"✨
+<br><br>
+You're the happiness of your father, so here's a shayari.
 </p>
+
+<div class="shayariPlayer">
+
+    <button id="shayariPlay" class="shayariPlay">
+        ▶
+    </button>
+
+    <div class="shayariInfo">
+        <div class="shayariTitle">Shayari 🎙️</div>
+
+        <div class="shayariProgress">
+            <div id="shayariProgressFill"></div>
+        </div>
+
+        <div class="shayariTime">
+            <span id="shayariCurrentTime">0:00</span>
+            <span id="shayariDuration">0:00</span>
+        </div>
+    </div>
+
+</div>
+
+<audio id="shayariAudio" preload="metadata">
+    <source src="./shayari.mp3" type="audio/mpeg">
+</audio>
 
 <button id="next13">Next ➜</button>
 
