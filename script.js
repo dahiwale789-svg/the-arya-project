@@ -13,7 +13,10 @@ t.classList.remove("show");
 const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 const bgMusic = document.getElementById("bgMusic");
+
 bgMusic.volume = 0.35;
+bgMusic.preload = "auto";
+bgMusic.load();
 const next1 = document.getElementById("next1");
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
@@ -93,15 +96,15 @@ next1.addEventListener("click", async () => {
 
   transitionEffect();
 
-  showPage(2);
-  updateProgress(2);
-
   try {
     await bgMusic.play();
     console.log("Music started successfully");
   } catch (error) {
-    console.log("Music error:", error);
+    console.error("Music could not start:", error);
   }
+
+  showPage(2);
+  updateProgress(2);
 
 });
 
