@@ -225,19 +225,14 @@ const replayBtn = document.getElementById("replayBtn");
 
 let noClickCount = 0;
 
-next1.addEventListener("click", async () => {
-
-  transitionEffect();
-
-  try {
-    await bgMusic.play();
-    console.log("Music started successfully");
-  } catch (error) {
-    console.error("Music could not start:", error);
-  }
+next1.addEventListener("click", () => {
 
   showPage(2);
   updateProgress(2);
+
+  bgMusic.play().catch((error) => {
+    console.log("Music could not start:", error);
+  });
 
 });
 
@@ -579,5 +574,44 @@ pages[pageNumber-1].classList.add("active");
 progressText.innerHTML=`Page ${pageNumber} / 19`;
 
 transitionEffect();
+
+}
+
+// ===== VIDEO + BACKGROUND MUSIC SYNC =====
+
+const volleyVideo = document.getElementById("volleyVideo");
+
+if (volleyVideo && bgMusic) {
+
+  let musicWasPlayingBeforeVideo = false;
+
+  // Video PLAY → background music pause
+  volleyVideo.addEventListener("play", () => {
+
+    musicWasPlayingBeforeVideo = !bgMusic.paused;
+
+    if (musicWasPlayingBeforeVideo) {
+      bgMusic.pause();
+    }
+
+  });
+
+  // Video PAUSE → background music resume
+  volleyVideo.addEventListener("pause", () => {
+
+    if (!volleyVideo.ended && musicWasPlayingBeforeVideo) {
+      bgMusic.play().catch(() => {});
+    }
+
+  });
+
+  // Video END → background music resume
+  volleyVideo.addEventListener("ended", () => {
+
+    if (musicWasPlayingBeforeVideo) {
+      bgMusic.play().catch(() => {});
+    }
+
+  });
 
 }
