@@ -92,21 +92,16 @@ const replayBtn = document.getElementById("replayBtn");
 
 let noClickCount = 0;
 
-next1.addEventListener("click", () => {
+next1.addEventListener("click", async () => {
 
   transitionEffect();
 
-  bgMusic.currentTime = 0;
-  bgMusic.volume = 0.35;
-
-  bgMusic.play()
-    .then(() => {
-      console.log("🎵 MUSIC PLAYING");
-    })
-    .catch((error) => {
-      console.log("❌ MUSIC ERROR:", error);
-      alert("Music start nahi hua: " + error.message);
-    });
+  try {
+    await bgMusic.play();
+    console.log("Music started successfully");
+  } catch (error) {
+    console.error("Music could not start:", error);
+  }
 
   showPage(2);
   updateProgress(2);
