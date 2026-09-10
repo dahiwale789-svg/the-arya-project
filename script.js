@@ -60,6 +60,139 @@ const page13 = document.getElementById("page13");
 const next12 = document.getElementById("next12");
 const next13 = document.getElementById("next13");
 
+const shayariAudio = document.getElementById("shayariAudio");
+const shayariPlay = document.getElementById("shayariPlay");
+const shayariProgressFill = document.getElementById("shayariProgressFill");
+const shayariCurrentTime = document.getElementById("shayariCurrentTime");
+const shayariDuration = document.getElementById("shayariDuration");
+
+function formatTime(seconds) {
+
+    if (!isFinite(seconds)) {
+        return "0:00";
+    }
+
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+
+    return minutes + ":" + String(secs).padStart(2, "0");
+}
+
+
+shayariPlay.addEventListener("click", async () => {
+
+    if (shayariAudio.paused) {
+
+        // Remember current background music position
+        // and pause it while shayari plays.
+        if (!bgMusic.paused) {
+            bgMusic.pause();
+        }
+
+        try {
+
+            await shayariAudio.play();
+
+            shayariPlay.innerHTML = "❚❚";
+
+        } catch (error) {
+
+            console.error("Shayari audio error:", error);
+
+        }
+
+    } else {
+
+        shayariAudio.pause();
+
+        shayariPlay.innerHTML = "▶";
+
+    }
+
+});
+
+
+shayariAudio.addEventListener("loadedmetadata", () => {
+
+    shayariDuration.innerHTML =
+        formatTime(shayariAudio.duration);
+
+});
+
+
+shayariAudio.addEventListener("timeupdate", () => {
+
+    const current = shayariAudio.currentTime;
+    const duration = shayariAudio.duration;
+
+    shayariCurrentTime.innerHTML =
+        formatTime(current);
+
+    if (duration > 0) {
+
+        const percentage =
+            (current / duration) * 100;
+
+        shayariProgressFill.style.width =
+            percentage + "%";
+
+    }
+
+});
+
+
+shayariAudio.addEventListener("ended", () => {
+
+    shayariPlay.innerHTML = "▶";
+
+    shayariProgressFill.style.width = "0%";
+
+    shayariCurrentTime.innerHTML = "0:00";
+
+    /*
+      Background music resumes from exactly
+      the position where it was paused.
+    */
+
+    bgMusic.play().catch(error => {
+
+        console.log(
+            "Background music could not resume:",
+            error
+        );
+
+    });
+
+});
+
+
+next13.addEventListener("click", () => {
+
+    // If shayari is still playing, stop it
+    // before moving to the next page.
+
+    if (!shayariAudio.paused) {
+
+        shayariAudio.pause();
+
+    }
+
+    shayariAudio.currentTime = 0;
+
+    shayariPlay.innerHTML = "▶";
+
+    shayariProgressFill.style.width = "0%";
+
+    shayariCurrentTime.innerHTML = "0:00";
+
+    transitionEffect();
+
+    showPage(14);
+
+    updateProgress(14);
+
+});
+
 const page14 = document.getElementById("page14");
 const next14 = document.getElementById("next14");
 
